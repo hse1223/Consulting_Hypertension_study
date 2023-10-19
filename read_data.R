@@ -19,8 +19,10 @@ Y_variable = c("refer_HTN")
 DATA = DATA[,c(categorical,dummy, continuous, Y_variable)]
 dummies = DATA[,dummy]
 dummies[dummies==2] = 0
+Y_variables = DATA[,Y_variable]
+Y_variables[Y_variables==2] = 0
 DATA[,dummy] = dummies
-
+DATA[,Y_variable] = Y_variables
 
 dim(DATA)
 str(DATA)
