@@ -24,8 +24,8 @@ Y_variables[Y_variables==2] = 0
 DATA[,dummy] = dummies
 DATA[,Y_variable] = Y_variables
 
-dim(DATA)
-str(DATA)
+# dim(DATA)
+# str(DATA)
 
 
 
