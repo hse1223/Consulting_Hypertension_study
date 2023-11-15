@@ -40,12 +40,11 @@ pchisq(q=mosaic::chisq(table(DATA[,dummy[7]], Y_variables)), df=1, lower.tail = 
 ### continuous
 
 continuous
-X_var = DATA[,continuous[1]]; res=glm(Y_variables ~ X_var); summary(res) # best, but still not significant
+X_var = DATA[,continuous[1]]; res=glm(Y_variables ~ X_var); summary(res) 
 X_var = DATA[,continuous[2]]; res=glm(Y_variables ~ X_var); summary(res)
 X_var = DATA[,continuous[3]]; res=glm(Y_variables ~ X_var); summary(res)
 X_var = DATA[,continuous[4]]; res=glm(Y_variables ~ X_var); summary(res)
 
-X_var = DATA[,continuous[3]] - DATA[,continuous[1]]; res=glm(Y_variables ~ X_var); summary(res) # difference may be significant.
-
+X_var = DATA[,continuous[3]] - DATA[,continuous[1]]; res=glm(Y_variables ~ X_var); summary(res) 
 
 
