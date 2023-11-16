@@ -27,14 +27,28 @@ pchisq(q=mosaic::chisq(table(X_variables, Y_variables)), df=length(unique(X_vari
 
 ### binary
 
+
+# table(DATA[,dummy[1]])
+# table(DATA[,dummy[2]])
+# table(DATA[,dummy[3]])
+# table(DATA[,dummy[4]])
+# table(DATA[,dummy[5]])
+# table(DATA[,dummy[6]])
+# table(DATA[,dummy[7]])
+
 dummy
 pchisq(q=mosaic::chisq(table(DATA[,dummy[1]], Y_variables)), df=1, lower.tail = F)
 pchisq(q=mosaic::chisq(table(DATA[,dummy[2]], Y_variables)), df=1, lower.tail = F)
 pchisq(q=mosaic::chisq(table(DATA[,dummy[3]], Y_variables)), df=1, lower.tail = F)
 pchisq(q=mosaic::chisq(table(DATA[,dummy[4]], Y_variables)), df=1, lower.tail = F) # almost significant
-pchisq(q=mosaic::chisq(table(DATA[,dummy[5]], Y_variables)), df=1, lower.tail = F)
 pchisq(q=mosaic::chisq(table(DATA[,dummy[6]], Y_variables)), df=1, lower.tail = F)
 pchisq(q=mosaic::chisq(table(DATA[,dummy[7]], Y_variables)), df=1, lower.tail = F) # significant
+
+drop_index=which(DATA[,dummy[5]]==3) # This variable has weird behavior.
+pchisq(q=mosaic::chisq(table(DATA[-drop_index,dummy[5]], Y_variables[-drop_index])), df=1, lower.tail = F)
+
+
+
 
 
 ### continuous
